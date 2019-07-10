@@ -1,0 +1,288 @@
+@import "variables";
+@import "extends";
+@import "mixin";
+
+* 
+{
+    box-sizing: border-box
+}
+
+body
+{
+    font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
+}
+
+// header
+header
+{
+    background: $secondaryColor;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: 999;
+
+    h2
+    {
+        color :#c9c5bd;
+        margin-bottom: 0;
+    }
+
+    .logo
+    {
+        @extend.f-w;
+
+        span
+        {
+            color: $primaryColor;
+        }
+    }
+
+    ul
+    {
+        @extend.f-w;
+        list-style: none;
+        display: flex;
+        margin-bottom: 5px;
+
+        li
+        {
+            padding : 10px 15px;
+            margin-right: 15px;
+
+            a
+            {
+                color: #c9c5bd;
+                text-decoration: none!important;
+                font-weight: bold;
+                text-transform: uppercase;
+                @include trans (all .6s ease-in-out);
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+// home
+.home
+{
+    background-image: $home_bg;
+    height: 100vh;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+
+    .home-content
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        h2
+        {
+            @extend.h2;
+        }
+
+        span
+        {
+            @extend.span;
+        }
+
+        p
+        {
+            @extend.p;
+        }
+
+        button
+        {
+            @extend.button-h;
+        }
+    }
+}
+
+// need
+.need
+{
+    background: $primaryColor;
+    padding : 5rem 0;
+    text-align: center;
+
+    h2
+    {
+        @extend.h2;
+        text-transform: capitalize;
+    }
+
+    span
+    {
+        @extend.span;
+        background: #fff;
+    }
+
+    p
+    {
+        @extend.p;
+        color: #fff;
+    }
+
+    button
+    {
+        @extend.button-s;
+    }
+}
+
+// service
+.service
+{
+    text-align: center;
+    padding: 5rem 0;
+
+    h2
+    {
+        @extend.h2;
+        color: #000;
+    }
+
+    span
+    {
+        @extend.span;
+    }
+
+    .item
+    {
+        margin-top: 25px;
+
+        @for $i from 1 through 4 {
+            .fa-#{$i} {
+                color: $primaryColor;
+            }
+        }
+
+        h3 {
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        p {
+            color: #a4a4a4;
+        }
+    }
+}
+
+// portfolio
+.portfolio
+{
+    background-color: #EEE;
+    overflow: hidden;
+    padding-top: 10px;
+
+    .parent-img
+    {
+        position : relative;
+        float: left;
+        width: 32%;
+        margin-left: 1%;
+        margin-bottom: 10px;
+
+        &:after {
+            content: "";
+            position :absolute;
+            top: 0;
+            left : 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($primaryColor, 0.6);
+            opacity: 0;
+            @include trans (all .6s ease-in-out);
+            cursor: pointer;
+        }
+
+        &:hover {
+            &:after {
+                opacity : 1;
+            }
+        }
+
+        img
+        {
+            width: 100%;
+        }
+    }
+}
+
+// download
+.download
+{
+    background: $secondaryColor;
+    text-align: center;
+    padding : 5rem 0;
+
+    h2
+    {
+        @extend.h2;
+    }
+
+    button
+    {
+        @extend.button-h;
+        margin: 1rem 0;
+    }
+}
+
+// footer
+footer
+{
+    text-align: center;
+    padding: 5rem 0 3.5rem 0;
+
+    .touch
+    {
+        h2
+        {
+            @extend.h2;
+            color: $secondaryColor;
+            text-transform: capitalize;
+        }
+
+        span
+        {
+            @extend.span;
+        }
+
+        p
+        {
+            color: #333;
+            font-weight: bold;
+            text-transform: capitalize;
+            line-height: 1.6;
+        }
+    }
+
+    .call
+    {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+        > div
+        {
+            margin: 1rem 1.5rem;
+
+            i
+            {
+                font-size: 2em;
+            }
+
+            .email
+            {
+                color: $primaryColor;
+            }
+        }
+    }
+}
+
+
+@import "media";

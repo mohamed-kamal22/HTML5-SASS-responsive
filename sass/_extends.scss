@@ -1,0 +1,66 @@
+@import "mixin";
+
+.f-w
+{
+    float: left;
+    width: 50%;
+}
+
+.h2 
+{
+    font-size : 3rem;
+    color: #fff
+}
+
+.span
+{
+    display: block;
+    width: 40px;
+    height :2px;
+    background: $primaryColor;
+    margin: 1rem auto;
+}
+
+.p
+{
+    margin: 1.5rem 0;
+    color : #c9c5bd;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.button-h
+{
+    background: $primaryColor;
+    color: #Fff;
+    text-transform: uppercase;
+    padding : 10px 20px;
+    border-radius: 15px;
+    border:0;
+    font-weight: bold;
+    cursor: pointer;
+    @include trans (all .6s ease-in-out);
+
+    &:hover {
+        background: #ffffff;
+        color: $primaryColor;
+    }
+}
+
+.button-s {
+    background: #fff;
+    color: $secondaryColor;
+    text-transform: uppercase;
+    padding : 13px 30px;
+    border-radius: 25px;
+    border:0;
+    font-weight: bold;
+    cursor: pointer;
+    @include trans (all .6s ease-in-out);
+
+    &:hover { 
+        background: $secondaryColor;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+}
